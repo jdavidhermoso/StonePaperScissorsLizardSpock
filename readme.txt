@@ -1,8 +1,8 @@
 I am gonna build the Big Bang Theory game Stone, Paper Scissors Lizard Spoke, while I am following the Platzi Basic programming course.
 
-Remember to visit platzi.com.
+Remember to visit platzi.com. It doesn't mind wich is your language level. You'll have something to learn in Platzi.com
 
-It doesn't mind wich is your language level. You'll have something to learn.
+Check a demo of this project in: http://www.juandavidhermoso.es/stonepaperscissorslizardspock
 
 These are the rules:
 
