@@ -12,3 +12,7 @@ These are the rules:
 8. Paper vs spock = Paper
 9. Spoke vs stone = Spock
 10. Stone vs scissors = Stone
+
+
+I am going to start the game building the User interface. My idea is to make 5 buttons, and something as an scorer at the top of the page.
+
