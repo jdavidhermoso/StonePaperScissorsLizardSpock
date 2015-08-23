@@ -94,5 +94,17 @@ var game = {
     machinePlay:function(){
         play =  Math.floor( Math.random() * (4 - 0 + 1) + 0 );
         return play;
+    },
+    resultScreen:function(action) {
+        var resultScreen = document.getElementById('result_screen');
+        console.log(resultScreen);
+        if (action) {
+            //Show
+            resultScreen.style.display = 'block';
+
+        } else {
+            //Hide
+             resultScreen.style.display = 'none';
+        }
     }
 };
