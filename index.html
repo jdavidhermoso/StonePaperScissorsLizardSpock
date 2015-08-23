@@ -2,54 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Stone, paper, scissors, lizard, Spoke | Game </title>
 
     <link rel="stylesheet" type="text/css" href="./css/game.css">
 </head>
 <body>
-    <header>
-        <h1>
-            Stone, paper, scissors, lizard, Spoke.
-        </h1>
-    </header>
-    <section>
-        <article class="scorer_container">
-            <div class="scorer scorer_player" id="scorer_player">
-                <div class="scorer_name">
-                    <p>
-                        Lizard
-                    </p>
+    <div class="container">
+        <header>
+            <h1>
+                Stone, paper, scissors, lizard, Spoke.
+            </h1>
+        </header>
+        <section>
+            <article class="scorer_container">
+                <div class="scorer scorer_player" id="scorer_player">
+                    <div class="score_character">
+                        <img src="./images/stone.png"   class="game_character"  alt="" title="" />
+                    </div>
                 </div>
-                <img src=""   class="game_character"  alt="" title="" />
-            </div>
-            <div class="scorer scorer_machine" id="scorer_machine">
-                <div class="scorer_name">
-                    <p>
-                        Spoke
-                    </p>
+                <div class="scorer scorer_result">
+                    <div >
+                        <p class="scorer_result_text">
+                            You win!
+                        </p>
+                    </div>
                 </div>
-                <img src=""   class="game_character"  alt="" title="" />
-            </div>
-        </article>
-        <article class="game_buttons">
-            <div class="game_button">
-                <img src="./images/stone.png" class="game_character"  alt="stone" title="stone" />
-            </div>
-            <div class="game_button">
-                <img src="./images/paper.png" class="game_character"  alt="paper" title="paper" />
-            </div>
-            <div class="game_button">
-                <img src="./images/stone.png" class="game_character"  alt="scissors" title="scissors" />
-            </div>
-            <div class="game_button">
-                <img src="./images/lizard.png"class="game_character"  alt="lizard" title="lizard" />
-            </div>
-            <div class="game_button">
-                <img src="./images/spoke.png" class="game_character"  alt="spoke" title="spoke" />
-            </div>
-
-        </article>
-    </section>
-
+                <div class="scorer scorer_player" id="scorer_machine">
+                    <div class="score_character">
+                        <img src="./images/stone.png"   class="game_character"  alt="" title="" />
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="game_buttons_container">
+                <div class="game_button">
+                    <img src="./images/stone.png" class="game_character"  alt="stone" title="stone" />
+                </div>
+                <div class="game_button">
+                    <img src="./images/paper.png" class="game_character"  alt="paper" title="paper" />
+                </div>
+                <div class="game_button">
+                    <img src="./images/scissors.png" class="game_character"  alt="scissors" title="scissors" />
+                </div>
+                <div class="game_button">
+                    <img src="./images/lizard.png"class="game_character"  alt="lizard" title="lizard" />
+                </div>
+                <div class="game_button">
+                    <img src="./images/spoke.png" class="game_character"  alt="spoke" title="spoke" />
+                </div>
+                </div>
+            </article>
+        </section>
+    </div>
 </body>
 </html>

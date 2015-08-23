@@ -7,20 +7,102 @@ html, body {
 
     margin: 0;
     padding: 0;
+    background-color: #3B64D9;
+}
+
+@font-face {
+    font-family: main_font;
+    src: url(../fonts/Star_Trek_future.ttf);
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/*  Score  */
+article {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+    overflow: hidden;
+}
+.scorer.scorer_player {
+    width: 37%;
+    max-width: 37%;
+
+    float: left;
+    height: auto;
+    text-align: center;
+    border-radius: 5px;
+}
+.scorer.scorer_result {
+    width: 26%;
+    max-width: 26%;
+       float: left;
+    height: auto;
+    text-align: center;
+    border-radius: 5px;
 }
 
 
-/*  Score  */
-.scorer_container {
+.score_character {
+    width: 40%;
+    max-width: 40%;
+    margin: 0 auto;
+
+    padding: 5%;
+    border-radius: 5px;
+}
+.game_buttons_container {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+.game_button {
+    width: 15%;
+    max-width: 15%;
+    margin: 2.5%;
+    float: left;
+
+}
+.game_button img {
+    cursor: pointer;
+}
+
+img {
     width: 100%;
     max-width: 100%;
 }
-.scorer {
-    width: 40%;
-    max-width: 40%;
-    margin: 0 5%;
-    background-color: red;
-    float: left;
-    height: 200px;
+
+h1,p {
+    font-size: 50px;
+    font-family: 'main_font';
     text-align: center;
+    margin: 0;
+    padding: 1%;
+}
+
+p.scorer_result_text {
+    margin-top: 15%;
+    font-size: 100px;
+}
+
+@media (max-width: 720px) {
+    h1 {
+        font-size: 40px;
+    }
+    p.scorer_result_text {
+        margin-top: 10%;
+        font-size: 60px;
+    }
+    .game_buttons_container {
+        margin-top: 0px;
+    }
 }
