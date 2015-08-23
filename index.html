@@ -4,41 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Stone, paper, scissors, lizard, Spoke | Game </title>
+    <title> Stone, paper, scissors, lizard, Spock | Game </title>
 
     <link rel="stylesheet" type="text/css" href="./css/game.css">
 
     <script type="text/javascript" src="./js/game.js"></script>
 </head>
     <body>
-        <div class="result_screen" id="result_screen">
-            <p class="paco">
+        <div class="result_screen" id="tie_screen">
+            <p class="result_text">
+                Tie!
+            </p>
+        </div>
+
+        <div class="result_screen" id="win_screen">
+            <p class="result_text">
                 You win!
+            </p>
+            <p class="result_text" id="result_win_score">
+
+            </p>
+        </div>
+        <div class="result_screen" id="lost_screen">
+            <p class="result_text">
+                You lost!
+            </p>
+            <p class="result_text" id="result_lost_score">
+
             </p>
         </div>
         <div class="container">
             <header>
                 <h1>
-                    Stone, paper, scissors, lizard, Spoke.
+                    Stone, paper, scissors, lizard, Spock.
                 </h1>
             </header>
             <section>
                 <article class="scorer_container">
-                    <div class="scorer scorer_player" id="scorer_player">
+                    <div class="scorer scorer_player" >
+                        <p id="scorer_player">
+                            0
+                        </p>
                         <div class="score_character">
-                            <img src="./images/stone.png"   class="game_character"  alt="" title="" />
+                            <img src="./images/blank.png" id="scorer_player_img"  class="game_character"  alt="" title="" />
                         </div>
                     </div>
-                    <div class="scorer scorer_result">
-                        <div >
-                            <p class="scorer_result_text">
-                                You win!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="scorer scorer_player" id="scorer_machine">
+
+                    <div class="scorer scorer_player" >
+                        <p id="scorer_machine">
+                            0
+                        </p>
                         <div class="score_character">
-                            <img src="./images/stone.png"   class="game_character"  alt="" title="" />
+                            <img src="./images/blank.png"  id="scorer_machine_img" class="game_character"  alt="" title="" />
                         </div>
                     </div>
                 </article>
@@ -57,11 +74,16 @@
                             <img src="./images/lizard.png"class="game_character"  alt="lizard" title="lizard" />
                         </div>
                         <div class="game_button" data-button-id="4">
-                            <img src="./images/spoke.png" class="game_character"  alt="spoke" title="spoke" />
+                            <img src="./images/Spock.png" class="game_character"  alt="Spock" title="Spock" />
                         </div>
                     </div>
                 </article>
             </section>
+             <div class="info">
+            <p>
+                Check the Stone, paper, scissors, lizard, Spock rules <a href="http://www.samkass.com/theories/RPSSL.html"> http://www.samkass.com/theories/RPSSL.html </a>
+            </p>
+        </div>
         </div>
 
         <script type="text/javascript">

@@ -1,4 +1,8 @@
-I am gonna build the Big Bang Theory game Stone, Paper Scissors Lizard Spoke.
+I am gonna build the Big Bang Theory game Stone, Paper Scissors Lizard Spoke, while I am following the Platzi Basic programming course.
+
+Remember to visit platzi.com.
+
+It doesn't mind wich is your language level. You'll have something to learn.
 
 These are the rules:
 
@@ -12,12 +16,6 @@ These are the rules:
 8. Paper vs spock = Paper
 9. Spoke vs stone = Spoke
 10. Stone vs scissors = Stone
-
-Scissors: 2
-Paper: 2
-Stone: 1
-Lizard: 2
-Spoke: 2
 
 
 I am going to start the game building the User interface. My idea is to make 5 buttons, and something as an scorer at the top of the page.
