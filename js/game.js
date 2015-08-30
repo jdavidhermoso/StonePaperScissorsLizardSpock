@@ -105,21 +105,7 @@ var game = {
     },
     checkWinner : function() {
         // Si la opción que ha elegido la máquina está entre los elementos que pierden contra la elección del usuario, el usuario gana.
-        var a = game.options[game.play.playerOption].wins_against.indexOf(game.play.machineOption);
-        var length = game.options[game.play.playerOption].wins_against.length;
-
-        var winner = false;
-
-        for (var a = 0; a < length;a++ ) {
-
-            if ( game.options[game.play.playerOption].wins_against[a] === game.play.machineOption) {
-                winner = true;
-
-                break;
-            }
-        }
-
-        return winner;
+        return game.options[game.play.playerOption].wins_against.indexOf(game.play.machineOption) !== -1;
     },
     machinePlay:function(){
         play =  Math.floor( Math.random() * (4 - 0 + 1) + 0 );
