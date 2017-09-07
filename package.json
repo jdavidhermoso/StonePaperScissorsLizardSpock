@@ -1,0 +1,22 @@
+{
+  "name": "stonepaperscissorslizardspock",
+  "version": "2.0.0",
+  "description": "I am gonna build the Big Bang Theory game Stone, Paper Scissors Lizard Spoke, while I am following the Platzi Basic programming course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdavidhermoso/StonePaperScissorsLizardSpock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdavidhermoso/StonePaperScissorsLizardSpock/issues"
+  },
+  "homepage": "https://github.com/jdavidhermoso/StonePaperScissorsLizardSpock#readme",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
