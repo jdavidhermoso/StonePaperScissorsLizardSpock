@@ -1,118 +1,120 @@
 var game = {
-    options : [
+    selectors: {
+        game_opt_tmpl: '#game_option_tmpl',
+        game_options_container: '.game_buttons_container'
+    },
+    options: [
         {
             name: "stone",
             wins_against: [
-               1,
-               2,
-               3
+                1,
+                2,
+                3
             ]
         },
-       {
+        {
             name: "paper",
-           wins_against: [
-               0,
-               4
+            wins_against: [
+                0,
+                4
             ]
         },
         {
             name: "scissors",
             wins_against: [
-               3
+                3
             ]
         },
         {
             name: "lizard",
-           wins_against: [
+            wins_against: [
                 1,
                 4
             ]
         },
         {
             name: "spock",
-           wins_against: [
-               0,
-               2
+            wins_against: [
+                0,
+                2
             ]
         },
     ],
-    play:{
+    play: {
         score_player: 0,
         score_machine: 0,
         playerOption: 0,
         machineOption: 0
     },
-    init:function() {
-        var game_buttons = document.getElementsByClassName('game_button');
-        var option_id = 0;
-        var scorer_player_img = document.getElementById('scorer_player_img');
-        var scorer_machine_img = document.getElementById('scorer_machine_img');
-        var scorer_player = document.getElementById('scorer_player');
-        var scorer_machine = document.getElementById('scorer_machine');
-        var result_win_score = document.getElementById('result_win_score');
-        var result_lost_score = document.getElementById('result_lost_score');
+    init: function () {
+        this.render();
+        var game_buttons = document.getElementsByClassName('game_button'),
+            option_id = 0,
+            scorer_player_img = document.getElementById('scorer_player_img'),
+            scorer_machine_img = document.getElementById('scorer_machine_img'),
+            scorer_player = document.getElementById('scorer_player'),
+            scorer_machine = document.getElementById('scorer_machine'),
+            result_win_score = document.getElementById('result_win_score'),
+            result_lost_score = document.getElementById('result_lost_score');
 
 
-
-        for (var i = 0, x = game_buttons.length; i<x; i++) {
-            game_buttons[i].addEventListener('click', function(e) {
-
-
+        for (var i = 0, x = game_buttons.length; i < x; i++) {
+            game_buttons[i].addEventListener('click', function (e) {
 
                 option_id = e.target.parentNode.dataset.buttonId;
 
                 game.play.playerOption = parseInt(option_id);
                 game.play.machineOption = game.machinePlay();
 
-                scorer_player_img.src = "./images/"+game.options[game.play.playerOption].name+".png";
+                scorer_player_img.src = "./images/" + game.options[game.play.playerOption].name + ".png";
 
-                setTimeout(function() {
-
-
-                    scorer_machine_img.src = "./images/"+game.options[game.play.machineOption].name+".png";
+                setTimeout(function () {
 
 
-                    if (game.play.playerOption === game.play.machineOption ) {
+                    scorer_machine_img.src = "./images/" + game.options[game.play.machineOption].name + ".png";
+
+
+                    if (game.play.playerOption === game.play.machineOption) {
                         game.tieScreen();
-                       return;
+                        return;
                     }
 
                     if (game.checkWinner() === true) {
                         game.play.score_player += 1;
-                         game.updateScorer(game.play.score_player,scorer_player);
+                        game.updateScorer(game.play.score_player, scorer_player);
 
                     } else {
                         game.play.score_machine += 1;
-                        game.updateScorer(game.play.score_machine,scorer_machine);
+                        game.updateScorer(game.play.score_machine, scorer_machine);
 
                     }
 
-                     if (game.play.score_player > 2) {
-                        result_win_score.innerHTML = game.play.score_player + " - "+ game.play.score_machine;
+                    if (game.play.score_player > 2) {
+                        result_win_score.innerHTML = game.play.score_player + " - " + game.play.score_machine;
                         game.resultScreen(true);
                         game.resetGame();
-                     } else if (game.play.score_machine > 2) {
-                        result_lost_score.innerHTML = game.play.score_player + " - "+ game.play.score_machine;
+                    } else if (game.play.score_machine > 2) {
+                        result_lost_score.innerHTML = game.play.score_player + " - " + game.play.score_machine;
                         game.resultScreen(false);
                         game.resetGame();
 
                     }
 
 
-                },1000);
+                }, 1000);
             });
         }
     },
-    checkWinner : function() {
+    checkWinner: function () {
         // Si la opción que ha elegido la máquina está entre los elementos que pierden contra la elección del usuario, el usuario gana.
         var a = game.options[game.play.playerOption].wins_against.indexOf(game.play.machineOption);
         var length = game.options[game.play.playerOption].wins_against.length;
 
         var winner = false;
 
-        for (var a = 0; a < length;a++ ) {
+        for (var a = 0; a < length; a++) {
 
-            if ( game.options[game.play.playerOption].wins_against[a] === game.play.machineOption) {
+            if (game.options[game.play.playerOption].wins_against[a] === game.play.machineOption) {
                 winner = true;
 
                 break;
@@ -121,11 +123,11 @@ var game = {
 
         return winner;
     },
-    machinePlay:function(){
-        play =  Math.floor( Math.random() * (4 - 0 + 1) + 0 );
+    machinePlay: function () {
+        play = Math.floor(Math.random() * (4 - 0 + 1) + 0);
         return play;
     },
-    resultScreen:function(action) {
+    resultScreen: function (action) {
         var winScreen = document.getElementById('win_screen');
         var lostScreen = document.getElementById('lost_screen');
 
@@ -135,28 +137,27 @@ var game = {
 
         } else {
             //Hide
-             lostScreen.style.display = 'block';
+            lostScreen.style.display = 'block';
         }
 
 
-        setTimeout( function(){
+        setTimeout(function () {
             winScreen.style.display = 'none';
             lostScreen.style.display = 'none';
-        },5000);
+        }, 5000);
     },
-    tieScreen:(function(){
+    tieScreen: (function () {
         var tieScreen = document.getElementById('tie_screen');
         tieScreen.style.display = 'block';
 
-        setTimeout( function(){
+        setTimeout(function () {
             tieScreen.style.display = 'none';
-        },1000);
+        }, 1000);
     }),
-    updateScorer:function(score,scorer) {
-        console.dir(scorer);
+    updateScorer: function (score, scorer) {
         scorer.innerHTML = score;
     },
-    resetGame:function() {
+    resetGame: function () {
         game.play.score_player = 0;
         game.play.score_machine = 0;
         game.play.playerOption = 0;
@@ -169,5 +170,14 @@ var game = {
 
         scorer_machine_img.src = "./images/blank.png";
         scorer_player_img.src = "./images/blank.png";
+    },
+    render: function() {
+        for (var i = 0, z = game.options.length; i < z; i++) {
+            var template = _.template($(game.selectors.game_opt_tmpl).html());
+            $(game.selectors.game_options_container).append(template({
+                option : game.options[i].name,
+                id: i
+            }));
+        }
     }
 };
